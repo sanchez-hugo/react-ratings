@@ -1,3 +1,17 @@
+
+# react-ratings 
+
+### A React.js component that can be used to see and choose ratings from 1-5. 
+
+### Currently only supports stars.
+
+### Todo:
+
+1. Add pointer/cursor when hovering over
+2. Add different icons instead of stars
+
+------
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
