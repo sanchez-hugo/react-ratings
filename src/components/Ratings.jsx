@@ -1,9 +1,10 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
+import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar as regStar } from "@fortawesome/free-regular-svg-icons";
-import { faStar as solStar } from "@fortawesome/free-solid-svg-icons";
+import { faStar as regularStar } from "@fortawesome/free-regular-svg-icons";
+import { faStar as solidStar } from "@fortawesome/free-solid-svg-icons";
 
-class Ratings extends Component {
+class Ratings extends PureComponent {
   state = {
     savedRating: 0,
     rating: 0,
@@ -46,8 +47,9 @@ class Ratings extends Component {
             onMouseLeave={() => {
               this.setRating(this.state.savedRating);
             }}
-            icon={this.state.rating >= ratingValue ? solStar : regStar}
-            color={this.state.rating >= ratingValue ? "yellow" : ""}
+            icon={this.state.rating >= ratingValue ? this.props.solidIcon : this.props.regularIcon}
+            color={this.state.rating >= ratingValue ? this.props.solidColor : ""}
+            role="button"
           />
         </label>
       );
@@ -56,11 +58,24 @@ class Ratings extends Component {
     return (
       <div className="container">
         <div className="row">{[...Array(5)].map(mapStar)}</div>
-        <div className="row">Current rating is: {this.state.rating}</div>
+        {this.props.showRatingMsg ? <div className="row">Current rating is: {this.state.rating}</div> : null}
       </div>
     );
   }
+}
 
+Ratings.propTypes = {
+  solidColor: PropTypes.string.isRequired,
+  regularIcon: PropTypes.object.isRequired,
+  solidIcon: PropTypes.object.isRequired,
+  showRatingMsg: PropTypes.bool.isRequired
+};
+
+Ratings.defaultProps = {
+  solidColor: "yellow",
+  showRatingMsg: false,
+  regularIcon: regularStar,
+  solidIcon: solidStar,
 }
 
 export default Ratings;

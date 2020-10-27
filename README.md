@@ -1,14 +1,14 @@
 
 # react-ratings 
 
-### A React.js component that can be used to see and choose ratings from 1-5. 
+### A [React.js](https://reactjs.org/) component that can be used to see and choose ratings from 1-5. 
 
-### Currently only supports stars.
+### Styled with default create-react-app css and [Bootstrap](https://getbootstrap.com/).
 
-### Todo:
+### Utilizes [Font Awesome](https://github.com/FortAwesome/react-fontawesome) icons.
 
-1. Add pointer/cursor when hovering over
-2. Add different icons instead of stars
+![An example of two types of rating renders](/src/assets/images/screenshot-01.png "Screenshot of ratings")
+
 
 ------
 
