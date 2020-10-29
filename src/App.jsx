@@ -19,7 +19,7 @@ class App extends Component {
           <Ratings showRatingMsg />
           <hr />
           <hr />
-          Only color prop passed
+          {/* Only color prop passed
           <Ratings solidColor="green" />
           <hr />
           <hr />
@@ -35,7 +35,7 @@ class App extends Component {
             regularIcon={regularSun}
           />
           <hr />
-          <hr />
+          <hr /> */}
         </div>
       </div>
     );
